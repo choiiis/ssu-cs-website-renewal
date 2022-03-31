@@ -1,6 +1,6 @@
 /* COMMON */
 body {
-  color: #333;
+  color: #040404;
   font-size: 16px;
   font-weight: 400;
   line-height: 1.4;
@@ -14,11 +14,12 @@ img {
 
 a {
   text-decoration: none;
+  color: #040404;
 }
 
 .inner {
   position: relative;
-  width: 1100px;
+  width: 1340px;
   margin: 0 auto;
   /* background-color: orchid; */
 }
@@ -28,26 +29,39 @@ header {
   position: fixed;
   width: 100%;
   z-index: 10;
+  box-shadow: 0px 1px 1px #05050519;
+}
+
+header .inner {
+  height: 152px;
 }
 
 #logo {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
   display: flex;
   align-items: center;
+  color: #363636;
+  font-weight: 500;
 }
 
 #logo img {
-  width: 145px;
-  height: 123px;
+  width: 175px;
+  height: 142px;
 }
 
 #logo #logo-txt h1 {
-  padding-top: 20px;
-  font-size: px;
+  padding-top: 12px;
+  font-size: 20px;
+  line-height: 1.2;
 }
 
 #logo #logo-txt span {
   display: block;
-  font-size: 10px;
+  margin-top: -2px;
+  font-size: 13px;
 }
 
 header ul {
@@ -56,23 +70,58 @@ header ul {
 
 header ul#menu-sub {
   position: absolute;
-  top: 10px;
-  right: 10px;
-  font-size: 16px;
+  top: 20px;
+  right: 0;
 }
 
 header ul#menu-sub li {
-  padding: 3px 5px;
+  box-sizing: border-box;
+}
+
+/* 메뉴 간 구분선 */
+header ul#menu-sub li::before {
+  position: absolute;
+  content: "";
+  width: 1px;
+  height: 12px;
+  background-color: #666464;
+  top: 0;
+  bottom: 0;
+  margin: auto 0;
+}
+
+header ul#menu-sub li:first-child:before {
+  display: none;
+}
+
+header ul#menu-sub li:last-child:before {
+  display: none;
+}
+
+header ul#menu-sub li a {
+  padding: 5px 10px;
+  font-size: 13px;
+  color: #666464;
+}
+
+header ul#menu-sub li a#ssu-btn {
+  margin-left: 5px;
+  background-color: #1DA4F0;
+  color: #f6f6f6;
 }
 
 header ul#menu-main {
   position: absolute;
-  bottom: 20px;
-  right: 20px;
+  bottom: 30px;
+  right: 40px;
   font-size: 20px;
   font-weight: bold;
 }
 
 header ul#menu-main li {
-  padding: 5px 30px;
+  padding: 5px 50px;
+}
+
+header ul#menu-main li:last-child {
+  padding-right: 0px;
 }
