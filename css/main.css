@@ -1,0 +1,78 @@
+/* COMMON */
+body {
+  color: #333;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 1.4;
+  font-family: 'Montserrat', 'Pretendard', sans-serif;
+  height: 3000px;
+}
+
+img {
+  display: block;
+}
+
+a {
+  text-decoration: none;
+}
+
+.inner {
+  position: relative;
+  width: 1100px;
+  margin: 0 auto;
+  /* background-color: orchid; */
+}
+
+/* HEADER */
+header {
+  position: fixed;
+  width: 100%;
+  z-index: 10;
+}
+
+#logo {
+  display: flex;
+  align-items: center;
+}
+
+#logo img {
+  width: 145px;
+  height: 123px;
+}
+
+#logo #logo-txt h1 {
+  padding-top: 20px;
+  font-size: px;
+}
+
+#logo #logo-txt span {
+  display: block;
+  font-size: 10px;
+}
+
+header ul {
+  display: flex;
+}
+
+header ul#menu-sub {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  font-size: 16px;
+}
+
+header ul#menu-sub li {
+  padding: 3px 5px;
+}
+
+header ul#menu-main {
+  position: absolute;
+  bottom: 20px;
+  right: 20px;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+header ul#menu-main li {
+  padding: 5px 30px;
+}
