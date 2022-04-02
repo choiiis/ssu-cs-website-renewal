@@ -1,11 +1,12 @@
 /* COMMON */
 body {
+  height: 3000px;
+  background-color: #1DA4F0;
   color: #040404;
   font-size: 16px;
   font-weight: 400;
   line-height: 1.4;
   font-family: 'Montserrat', 'Pretendard', sans-serif;
-  height: 3000px;
 }
 
 img {
@@ -31,12 +32,14 @@ a {
 header {
   position: fixed;
   width: 100%;
+  background-color: #ffffff;
   z-index: 5;
   box-shadow: 0px 1px 1px #05050519;
 }
 
 header .inner {
-  height: 152px;
+  /* height: 152px; */
+  height: 136px;
 }
 
 /* HEADER - LOGO */
@@ -52,37 +55,44 @@ header .inner {
 }
 
 #logo img {
-  width: 175px;
-  height: 142px;
+  /* width: 175px;
+  height: 142px; */
+  width: 140px;
+  height: 112px;
   transition: .5s;
 }
 
 #logo #logo-txt h1 {
-  padding-top: 12px;
-  font-size: 20px;
+  /* padding-top: 12px; */
+  /* font-size: 20px; */
+  padding-top: 10px;
+  font-size: 18px;
   line-height: 1.2;
 }
 
 #logo #logo-txt span {
   display: block;
-  margin-top: -2px;
-  font-size: 13px;
+  /* margin-top: -2px;
+  font-size: 13px; */
+  margin-top: -3px;
+  font-size: 12px;
 }
 
 /* HEADER - MENU TOP */
-header ul.menu__top {
+header ul#menu__top {
   position: absolute;
   display: flex;
-  top: 20px;
+  /* top: 20px; */
+  top: 15px;
   right: 0;
 }
 
-header ul.menu__top li {
+header ul#menu__top li {
   box-sizing: border-box;
 }
 
 /* 메뉴 간 구분선 */
-header ul.menu__top li::before {
+header ul#menu__top li::before {
   position: absolute;
   content: "";
   width: 1px;
@@ -93,48 +103,161 @@ header ul.menu__top li::before {
   margin: auto 0;
 }
 
-header ul.menu__top li:first-child:before {
+header ul#menu__top li:first-child:before {
   display: none;
 }
 
-header ul.menu__top li:last-child:before {
+header ul#menu__top li:last-child:before {
   display: none;
 }
 
-header ul.menu__top li a {
+header ul#menu__top li a {
   padding: 5px 10px;
   font-size: 13px;
   color: #666464;
 }
 
-header ul.menu__top li a#ssu-btn {
+header ul#menu__top li a#ssu-btn {
   margin-left: 5px;
   background-color: #1DA4F0;
   color: #f6f6f6;
 }
 
 /* HEADER - MENU MAIN */
-header ul.menu__main {
+header ul#menu__main {
   position: absolute;
   display: flex;
   width: 830px;
+  height: 70px;
   left: auto;
   right: 0;
+  bottom: 0;
   margin: 0;
-  bottom: 30px;
   font-size: 20px;
   font-weight: bold;
+  align-items: center;
 }
 
-header ul.menu__main>li {
-  padding: 5px 50px;
+header ul#menu__main>li {
+  text-align: center;
+  flex: 1 0;
+}
+
+header ul#menu__main>li a {
+  padding: 25px 20px;
 }
 
 header .inner .material-icons#toggle-btn {
   display: none;
+  position: absolute;
+  height: 30px;
+  top: 0;
+  bottom: 0;
+  right: 10px;
+  margin: auto;
+  font-size: 30px;
+  color: #666464;
 }
 
+/* 메뉴 상세보기 */
+header #menu__sub {
+  display: none;
+  position: fixed;
+  width: 100%;
+  height: 200px;
+  left: 0;
+  top: 136px;
+  background-color: rgba(255, 255, 255, 1);
+  z-index: 5;
+}
 
+header #menu__sub .inner #sub-content {
+  display: flex;
+  width: 830px;
+  position: absolute;
+  right: 0;
+}
+
+header #menu__sub #sub-content .sub-item {
+  text-align: center;
+  padding: 10px 0 0 0;
+  flex: 1 0;
+}
+
+header #menu__sub #sub-content .sub-item>li {
+  padding: 3px 0;
+}
+
+header #menu__sub #sub-content .sub-item>li a {
+  font-weight: 500;
+  font-size: 15px;
+  color: #666464;
+}
+
+/* NAV MENU */
+nav {
+  display: none;
+  position: absolute;
+  width: 60%;
+  height: 3000px;
+  right: 0;
+  background-color: #101010e3;
+  z-index: 10;
+}
+
+.material-icons#close-btn {
+  display: block;
+  text-align: right;
+  padding: 25px 25px 20px 0;
+  font-size: 30px;
+  color: #c0c0c0;
+}
+
+.nav__main>li {
+  display: block;
+  padding: 40px 0 10px 20px;
+  margin-left: 50px;
+  border-bottom: 1px solid #c0c0c0;
+}
+
+.nav__main>li a {
+  color: #fbfbfb;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.nav__main>li .nav__item {
+  height: 25px;
+  display: flex;
+  align-items: center;
+}
+
+.nav__main>li .nav__item .material-icons.expand-btn {
+  display: block;
+  height: 20px;
+  margin-left: 5px;
+  font-size: 20px;
+  color: #fbfbfb;
+}
+
+.nav__main>li .nav__sub {
+  /* sub menu 숨김 */
+  display: none;
+  margin: 15px 0 20px 10px;
+}
+
+.nav__main>li .nav__sub>li {
+  padding: 10px 0 0 8px;
+  border: none;
+}
+
+.nav__main>li .nav__sub>li a {
+  color: #fbfbfb;
+  font-size: 15px;
+  font-weight: 400;
+}
+
+/* SMALL SCREEN */
 @media screen and (max-width: 1400px) {
   .inner {
     width: 95%;
@@ -162,6 +285,7 @@ header .inner .material-icons#toggle-btn {
   }
 }
 
+/* MOBILE SCREEN */
 @media screen and (max-width: 900px) {
   header .inner {
     height: 80px;
@@ -173,23 +297,15 @@ header .inner .material-icons#toggle-btn {
     margin: auto;
   }
 
-  header ul.menu__top {
+  header ul#menu__top {
     display: none;
   }
 
-  header ul.menu__main {
+  header ul#menu__main {
     display: none;
   }
 
   header .inner .material-icons#toggle-btn {
     display: block;
-    position: absolute;
-    height: 30px;
-    top: 0;
-    bottom: 0;
-    right: 20px;
-    margin: auto;
-    font-size: 30px;
-    color: #666464;
   }
 }
