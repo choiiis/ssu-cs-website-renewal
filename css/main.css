@@ -32,22 +32,20 @@ a {
 header {
   position: fixed;
   width: 100%;
-  background-color: #ffffff;
+  background-color: #ffffffef;
   z-index: 5;
   box-shadow: 0px 1px 1px #05050519;
 }
 
 header .inner {
-  /* height: 152px; */
-  height: 136px;
+  display: flex;
+  justify-content: space-between;
 }
 
 /* HEADER - LOGO */
 #logo {
   position: absolute;
-  top: 0;
-  bottom: 0;
-  left: 0;
+  top: 14px;
   display: flex;
   align-items: center;
   color: #363636;
@@ -55,99 +53,113 @@ header .inner {
 }
 
 #logo img {
-  /* width: 175px;
-  height: 142px; */
   width: 140px;
   height: 112px;
   transition: .5s;
 }
 
 #logo #logo-txt h1 {
-  /* padding-top: 12px; */
-  /* font-size: 20px; */
   padding-top: 10px;
   font-size: 18px;
   line-height: 1.2;
 }
 
-#logo #logo-txt span {
-  display: block;
-  /* margin-top: -2px;
-  font-size: 13px; */
+#logo #logo-txt div {
   margin-top: -3px;
   font-size: 12px;
 }
 
+/* HEADER */
+#menu {
+  flex: 1 0;
+  width: 830px;
+}
+
 /* HEADER - MENU TOP */
-header ul#menu__top {
-  position: absolute;
+#menu__top {
+  position: relative;
   display: flex;
-  /* top: 20px; */
   top: 15px;
   right: 0;
+  justify-content: flex-end;
 }
 
-header ul#menu__top li {
-  box-sizing: border-box;
-}
 
 /* 메뉴 간 구분선 */
-header ul#menu__top li::before {
+#menu__top li::before {
   position: absolute;
   content: "";
   width: 1px;
   height: 12px;
-  background-color: #666464;
+  background-color: #6664644b;
   top: 0;
   bottom: 0;
   margin: auto 0;
 }
 
-header ul#menu__top li:first-child:before {
+#menu__top li:first-child:before {
   display: none;
 }
 
-header ul#menu__top li:last-child:before {
+#menu__top li:last-child:before {
   display: none;
 }
 
-header ul#menu__top li a {
+#menu__top li a {
   padding: 5px 10px;
   font-size: 13px;
   color: #666464;
 }
 
-header ul#menu__top li a#ssu-btn {
+#menu__top li a#ssu-btn {
   margin-left: 5px;
   background-color: #1DA4F0;
   color: #f6f6f6;
 }
 
 /* HEADER - MENU MAIN */
-header ul#menu__main {
-  position: absolute;
+#menu__main {
   display: flex;
   width: 830px;
-  height: 70px;
-  left: auto;
-  right: 0;
-  bottom: 0;
-  margin: 0;
+  margin-top: 30px;
+  /* 오른쪽 정렬 */
+  margin-left: auto;
   font-size: 20px;
   font-weight: bold;
-  align-items: center;
+  justify-content: flex-end;
+  padding: 30px 0;
 }
 
-header ul#menu__main>li {
+#menu__main>li {
   text-align: center;
+  /* 메뉴 간격 일정하게 */
   flex: 1 0;
 }
 
-header ul#menu__main>li a {
-  padding: 25px 20px;
+/* hover시 상세 메뉴 보이기 */
+#menu__main:hover .menu__sub {
+  display: block;
 }
 
-header .inner .material-icons#toggle-btn {
+/* HEADER - MENU SUB */
+.menu__sub {
+  display: none;
+  margin: 20px 0 0 0;
+}
+
+.menu__sub>li {
+  padding: 2px 0;
+}
+
+.menu__sub>li a {
+  font-weight: 500;
+  font-size: 15px;
+  color: #666464;
+}
+
+/* NAV MENU */
+/* FOR MOBILE - 메뉴 네비게이션 버튼 */
+#toggle-btn {
   display: none;
   position: absolute;
   height: 30px;
@@ -159,53 +171,18 @@ header .inner .material-icons#toggle-btn {
   color: #666464;
 }
 
-/* 메뉴 상세보기 */
-header #menu__sub {
-  display: none;
-  position: fixed;
-  width: 100%;
-  height: 200px;
-  left: 0;
-  top: 136px;
-  background-color: rgba(255, 255, 255, 1);
-  z-index: 5;
-}
-
-header #menu__sub .inner #sub-content {
-  display: flex;
-  width: 830px;
-  position: absolute;
-  right: 0;
-}
-
-header #menu__sub #sub-content .sub-item {
-  text-align: center;
-  padding: 10px 0 0 0;
-  flex: 1 0;
-}
-
-header #menu__sub #sub-content .sub-item>li {
-  padding: 3px 0;
-}
-
-header #menu__sub #sub-content .sub-item>li a {
-  font-weight: 500;
-  font-size: 15px;
-  color: #666464;
-}
-
-/* NAV MENU */
 nav {
   display: none;
-  position: absolute;
   width: 60%;
-  height: 3000px;
+  min-height: 100vh;
+  position: fixed;
+  top: 0;
   right: 0;
   background-color: #101010e3;
   z-index: 10;
 }
 
-.material-icons#close-btn {
+#close-btn {
   display: block;
   text-align: right;
   padding: 25px 25px 20px 0;
@@ -232,7 +209,7 @@ nav {
   align-items: center;
 }
 
-.nav__main>li .nav__item .material-icons.expand-btn {
+.nav__main>li .nav__item .expand-btn {
   display: block;
   height: 20px;
   margin-left: 5px;
@@ -264,10 +241,9 @@ nav {
   }
 }
 
-@media screen and (max-width: 1200px) {
+@media screen and (max-width: 1150px) {
   #logo {
     top: 0;
-    bottom: auto;
   }
 
   #logo img {
@@ -280,7 +256,7 @@ nav {
     font-size: 12px;
   }
   
-  #logo #logo-txt span {
+  #logo #logo-txt div {
     display: none;
   }
 }
