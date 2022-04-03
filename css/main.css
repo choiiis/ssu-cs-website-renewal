@@ -1,7 +1,7 @@
 /* COMMON */
 body {
   height: 3000px;
-  background-color: #1DA4F0;
+  background-color: #ffffff;
   color: #040404;
   font-size: 16px;
   font-weight: 400;
@@ -32,6 +32,7 @@ a {
 header {
   position: fixed;
   width: 100%;
+  top: 0;
   background-color: #ffffffef;
   z-index: 5;
   box-shadow: 0px 1px 1px #05050519;
@@ -122,6 +123,7 @@ header .inner {
   display: flex;
   width: 830px;
   margin-top: 30px;
+  /* margin-bottom: 30px; */
   /* 오른쪽 정렬 */
   margin-left: auto;
   font-size: 20px;
@@ -136,18 +138,15 @@ header .inner {
   flex: 1 0;
 }
 
-/* hover시 상세 메뉴 보이기 */
-#menu__main:hover .menu__sub {
-  display: block;
-}
-
 /* HEADER - MENU SUB */
 .menu__sub {
-  display: none;
-  margin: 20px 0 0 0;
+  /* display: none; */
+  height: 0px;
+  transition: 1s;
 }
 
 .menu__sub>li {
+  display: none;
   padding: 2px 0;
 }
 
@@ -155,6 +154,18 @@ header .inner {
   font-weight: 500;
   font-size: 15px;
   color: #666464;
+}
+
+/* hover시 상세 메뉴 보이기 */
+#menu__main:hover .menu__sub {
+  display: block;
+  margin: 20px 0 0 0;
+  height: auto;
+  transition: .2s;
+}
+
+#menu__main:hover .menu__sub>li {
+  display: block;
 }
 
 /* NAV MENU */
@@ -234,6 +245,7 @@ nav {
   font-weight: 400;
 }
 
+/* ----------------------------------------------------------- */
 /* SMALL SCREEN */
 @media screen and (max-width: 1400px) {
   .inner {
