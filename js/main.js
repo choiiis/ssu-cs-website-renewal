@@ -43,3 +43,21 @@ for(let i = 1; i <= 5; i++) {
     }
   })
 }
+
+// SWIPER
+new Swiper('.swiper', {
+  direction: 'horizontal',
+  autoplay: {
+    delay: 3000,
+    disableOnInteraction: true
+  }, // 자동 재생
+  loop: true, // 반복 재생
+  pagination: {
+    el: '#teaser .swiper-pagination', // 페이지 번호 요소 선택자 (동글뱅이). 어떤 요소를 사용할건지
+    clickable: true // 페이지 번호 요소 제어할 수 있는지(페이지네이션 클릭 시)
+  },
+  navigation: {
+    prevEl: '#teaser .swiper-prev', // 이전 슬라이드 보는 버튼
+    nextEl: '#teaser .swiper-next', // 다음 슬라이드 보는 버튼
+  }
+}); // 생성자
